@@ -35,7 +35,7 @@ export default function FinalScreen({ onRestart }: FinalScreenProps) {
         </h2>
 
         <p className="text-rose-200/70 font-medium mb-12">
-          You deserve all the happiness in the world.
+          You deserve all the happiness in the world Leona.
         </p>
 
         <motion.button

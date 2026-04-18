@@ -9,7 +9,7 @@ interface MainMenuProps {
 
 export default function MainMenu({ onNavigate }: MainMenuProps) {
   const menuItems = [
-    { id: 'wish', title: 'Make a Wish', icon: CalendarHeart, color: 'text-rose-400', bg: 'bg-rose-500/10' },
+    { id: 'reasons', title: '24 Reasons', icon: CalendarHeart, color: 'text-rose-400', bg: 'bg-rose-500/10' },
     { id: 'memories', title: 'Core Memories', icon: Flower2, color: 'text-pink-400', bg: 'bg-pink-500/10' },
     { id: 'words', title: 'Words for You', icon: Mail, color: 'text-red-400', bg: 'bg-red-500/10' },
   ] as const;

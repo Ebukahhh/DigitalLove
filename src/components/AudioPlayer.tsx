@@ -25,10 +25,10 @@ export default function AudioPlayer({ isPlaying, setIsPlaying }: AudioPlayerProp
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
-      {/* Using a soft, romantic royalty-free track placeholder */}
+      {/* Provoquer by Dadju */}
       <audio 
         ref={audioRef} 
-        src="https://cdn.pixabay.com/download/audio/2022/01/26/audio_d0c6ff1cb8.mp3?filename=romantic-piano-11222.mp3" 
+        src="/videoplayback.weba" 
         loop 
       />
       

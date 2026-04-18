@@ -7,13 +7,27 @@ interface CoreMemoriesProps {
   onBack: () => void;
 }
 
-const memories = [
-  { id: 1, url: 'https://picsum.photos/seed/us1/600/800', caption: 'The First Time We Met', rotation: -6 },
-  { id: 2, url: 'https://picsum.photos/seed/us2/800/600', caption: 'Our First Trip', rotation: 4 },
-  { id: 3, url: 'https://picsum.photos/seed/us3/600/600', caption: 'Late Night Laughs', rotation: -3 },
-  { id: 4, url: 'https://picsum.photos/seed/us4/600/800', caption: 'Just Us', rotation: 5 },
-  { id: 5, url: 'https://picsum.photos/seed/us5/800/800', caption: 'Core Memory', rotation: -5 },
+const imageFiles = [
+  '/images/0743cc34-d99d-40db-afb8-983b0d5facde.JPG',
+  '/images/606881b4-bad0-4ce4-bc9f-433f77ebdc4d.JPG',
+  '/images/7fd08b2c-ad8b-49b3-be4d-edbaefe8c6c8.JPG',
+  '/images/IMG_0307.JPG',
+  '/images/IMG_4105.PNG',
+  '/images/IMG_5944.jpg',
+  '/images/IMG_6154.jpg',
+  '/images/IMG_7143.PNG',
+  '/images/IMG_7445.JPG',
+  '/images/IMG_8143.jpg',
+  '/images/IMG_8295.jpg',
+  '/images/IMG_9125.jpg',
+  '/images/c5619121-5129-4516-892e-078c3ac9e885.JPG'
 ];
+
+const memories = imageFiles.map((url, i) => ({
+  id: i + 1,
+  url,
+  rotation: (Math.random() - 0.5) * 15,
+}));
 
 export default function CoreMemories({ onBack }: CoreMemoriesProps) {
   const [selectedPhoto, setSelectedPhoto] = useState<typeof memories[0] | null>(null);
@@ -104,7 +118,7 @@ export default function CoreMemories({ onBack }: CoreMemoriesProps) {
 
       <div className="absolute inset-x-0 top-24 text-center z-20 pointer-events-none">
         <h2 className="text-4xl font-serif text-rose-100 mb-2 drop-shadow-md bg-black/40 border border-rose-500/30 inline-block px-6 py-2 rounded-full backdrop-blur-md">
-          Our Memories
+          Memories
         </h2>
         <p className="text-rose-300 font-medium block mt-2 drop-shadow-sm">Catch a memory to view it</p>
       </div>
@@ -119,7 +133,7 @@ export default function CoreMemories({ onBack }: CoreMemoriesProps) {
             onTouchStart={(e) => { e.currentTarget.dataset.paused = 'true'; e.currentTarget.style.zIndex = '40'; e.currentTarget.style.scale = '1.05'; }}
             onTouchEnd={(e) => { e.currentTarget.dataset.paused = 'false'; e.currentTarget.style.zIndex = ''; e.currentTarget.style.scale = '1'; }}
             onClick={() => setSelectedPhoto(photo)}
-            className="absolute cursor-pointer bg-zinc-900 p-3 pb-12 rounded-sm shadow-[0_0_20px_rgba(244,63,94,0.15)] border border-rose-500/20 hover:border-rose-500/50 hover:shadow-[0_0_30px_rgba(244,63,94,0.3)] transition-[scale,box-shadow,border-color,z-index] duration-300 pointer-events-auto"
+            className="absolute cursor-pointer bg-zinc-900 p-3 rounded-sm shadow-[0_0_20px_rgba(244,63,94,0.15)] border border-rose-500/20 hover:border-rose-500/50 hover:shadow-[0_0_30px_rgba(244,63,94,0.3)] transition-[scale,box-shadow,border-color,z-index] duration-300 pointer-events-auto"
             style={{
               width: '220px',
               transform: `translate3d(-1000px, -1000px, 0)`,
@@ -129,14 +143,11 @@ export default function CoreMemories({ onBack }: CoreMemoriesProps) {
             <div className="w-full aspect-square bg-black overflow-hidden pointer-events-none border border-zinc-800">
               <img 
                 src={photo.url} 
-                alt={photo.caption} 
+                alt="Memory" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
             </div>
-            <p className="font-script text-xl text-center mt-4 text-rose-100 absolute bottom-3 w-full left-0 pointer-events-none drop-shadow-md">
-              {photo.caption}
-            </p>
           </div>
         ))}
       </div>
@@ -161,18 +172,15 @@ export default function CoreMemories({ onBack }: CoreMemoriesProps) {
                initial={{ scale: 0.9, y: 20 }}
                animate={{ scale: 1, y: 0 }}
                exit={{ scale: 0.9, y: 20 }}
-               className="bg-zinc-900 p-4 pb-16 rounded-sm max-w-lg w-full relative border border-rose-500/30"
+               className="bg-zinc-900 p-4 rounded-sm max-w-lg w-full relative border border-rose-500/30 flex items-center justify-center min-h-[40vh]"
                onClick={(e) => e.stopPropagation()}
              >
                <img 
                  src={selectedPhoto.url} 
-                 alt={selectedPhoto.caption} 
-                 className="w-full h-auto max-h-[70vh] object-contain"
+                 alt="Selected memory" 
+                 className="w-full h-auto max-h-[80vh] object-contain"
                  referrerPolicy="no-referrer"
                />
-               <p className="font-script text-3xl text-center mt-6 text-rose-100 absolute bottom-4 w-full left-0 drop-shadow-md">
-                 {selectedPhoto.caption}
-               </p>
              </motion.div>
           </motion.div>
         )}

@@ -7,18 +7,21 @@ interface WordsForYouProps {
   onBack: () => void;
 }
 
-const letter = `My love,
+const letter = `Mon ndolo,
 
-I wanted to make something special for you today. Not just a card, but a little digital space that holds a piece of how much you mean to me.
+Joyeux anniversaire, mon amour.
 
-Every day with you feels like a gift. You bring so much light, laughter, and warmth into my life. I love the way you smile, the way you care for others, and the way you make even the simplest moments feel extraordinary.
+Even with the distance, the silence, and everything in between, one thing that has never changed is the way I feel about you.
 
-Thank you for being exactly who you are. Thank you for choosing me.
+I miss you and not just in the obvious way, but in the little things too. Like your smile, your voice, your mind… everything. 
 
-Happy Birthday. I love you more than words can say.
+On your birthday, I don’t just celebrate you… I celebrate the love we share, the memories we’ve built, and the quiet, unspoken promise that maybe… just maybe… our story doesn’t stop here.
 
-Forever yours,
-Me ❤️`;
+I hope today reminds you how special you are. How deeply you are loved. Not just by the world around you, but by me… in a way that hasn’t faded, not even a little.
+
+J'taime
+Always yours,  
+David🫶🏾`;
 
 export default function WordsForYou({ onBack }: WordsForYouProps) {
   const [displayedText, setDisplayedText] = useState('');

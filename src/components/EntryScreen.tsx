@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Gift, Heart } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 interface EntryScreenProps {
   key?: string;
@@ -31,8 +31,13 @@ export default function EntryScreen({ onOpen }: EntryScreenProps) {
             <motion.div
               animate={{ rotate: [0, 5, -5, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+              className="w-full h-full"
             >
-              <Gift className="w-24 h-24 sm:w-32 sm:h-32 text-rose-400 drop-shadow-lg" strokeWidth={1.5} />
+              <img 
+                src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?q=80&w=800&auto=format&fit=crop" 
+                alt="Beautiful bouquet of red roses" 
+                className="w-full h-full object-cover rounded-full"
+              />
             </motion.div>
           </div>
         </motion.div>

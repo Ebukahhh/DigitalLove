@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { AnimatePresence } from 'motion/react';
 import EntryScreen from './components/EntryScreen';
 import MainMenu from './components/MainMenu';
-import MakeAWish from './components/MakeAWish';
+import Reasons24 from './components/Reasons24';
 import CoreMemories from './components/CoreMemories';
 import WordsForYou from './components/WordsForYou';
 import CheekyGame from './components/CheekyGame';
@@ -10,7 +10,7 @@ import FinalScreen from './components/FinalScreen';
 import AudioPlayer from './components/AudioPlayer';
 import LoveRain from './components/LoveRain';
 
-export type Screen = 'entry' | 'game' | 'menu' | 'wish' | 'memories' | 'words' | 'final';
+export type Screen = 'entry' | 'game' | 'menu' | 'reasons' | 'memories' | 'words' | 'final';
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('entry');
@@ -48,8 +48,8 @@ export default function App() {
         {currentScreen === 'menu' && (
           <MainMenu key="menu" onNavigate={navigateTo} />
         )}
-        {currentScreen === 'wish' && (
-          <MakeAWish key="wish" onBack={() => navigateTo('menu')} />
+        {currentScreen === 'reasons' && (
+          <Reasons24 key="reasons" onBack={() => navigateTo('menu')} />
         )}
         {currentScreen === 'memories' && (
           <CoreMemories key="memories" onBack={() => navigateTo('menu')} />
