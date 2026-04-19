@@ -81,7 +81,7 @@ export default function CheekyGame({ onComplete }: CheekyGameProps) {
         </motion.div>
 
         <h2 className="text-3xl font-serif text-rose-100 mb-10 relative z-10 drop-shadow-md">
-          {sheSaidYes ? "OfCourse you do! ❤️" : "Do you love me?"}
+          {sheSaidYes ? "Of course you do! ❤️" : "Do you love me?"}
         </h2>
 
         {!sheSaidYes ? (
