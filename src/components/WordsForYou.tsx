@@ -19,7 +19,7 @@ On your birthday, I don’t just celebrate you… I celebrate the love we share,
 
 I hope today reminds you how special you are. How deeply you are loved. Not just by the world around you, but by me… in a way that hasn’t faded, not even a little.
 
-J'taime
+Je t'aime
 Always yours,  
 David🫶🏾`;
 

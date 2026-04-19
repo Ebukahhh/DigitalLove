@@ -9,6 +9,7 @@ import CheekyGame from './components/CheekyGame';
 import FinalScreen from './components/FinalScreen';
 import AudioPlayer from './components/AudioPlayer';
 import LoveRain from './components/LoveRain';
+import CursorSparkle from './components/CursorSparkle';
 
 export type Screen = 'entry' | 'game' | 'menu' | 'reasons' | 'memories' | 'words' | 'final';
 
@@ -31,7 +32,8 @@ export default function App() {
   return (
     <div className="relative bg-black min-h-[100dvh] w-full font-sans text-rose-100 overflow-x-hidden selection:bg-rose-500/30">
       <LoveRain />
-      
+      <CursorSparkle />
+
       {/* Global Audio Player */}
       {hasInteracted && (
         <AudioPlayer isPlaying={isAudioPlaying} setIsPlaying={setIsAudioPlaying} />
